@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To Do App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 20px;
+        }
+
+        .todo-container {
+            background-color: rgba(108, 103, 101, 0.784);
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: rgba(108, 103, 101, 0.784);
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .done{
+            color: rgb(125, 38, 6);
+            text-decoration: line-through;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+        body{
+            background-color: lightgray;
+        }
+       .enablebutton{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       }
+        input,
+        select,
+        button {
+            margin-bottom: 10px;
+        }
+
+        .delete-button {
+            background-color: white;
+            padding: 5px 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="idb.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+<body>
+    <div class="container" style="border: 2px solid rgba(108, 103, 101, 0.784);">
+        <h1 s>To Do App</h1>
+        <div class="todo-container">
+            <h4>Add new to do.</h4>
+            <div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="title">Task Title:</label>
+                        <input type="text" name="title" id="title" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="hours">Hours (hh):</label>
+                        <input type="number" name="hours" id="hours" class="form-control" min="0" max="23" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Mins">Mins (mm):</label>
+                        <input type="number" name="Mins" id="Mins" class="form-control" min="0" max="59" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="day">Day:</label>
+                        <input type="number" name="day" id="day" class="form-control" min="1" max="31">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="month">Month:</label>
+                        <select name="month" id="month" class="form-control">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">March</option>
+                            <option value="4">April</option>
+                            <option value="5">May</option>
+                            <option value="6">June</option>
+                            <option value="7">July</option>
+                            <option value="8">August</option>
+                            <option value="9">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="year">Year:</label>
+                        <input type="number" value="2024" name="year" id="year" class="form-control" min="2000" required>
+                    </div>
+                    <ul id="tasks"></ul>
+                </div>
+                <button type="button" onclick="todoApp.addTask()" class="btn btn-primary">Add Task</button>
+            </div>
+        </div>
+        <br>
+        <div style="background-color: rgba(108, 103, 101, 0.784); width: 100%; height: 10vh;" id="notification"></div>
+    </div>
+</body>
+
+</html>
